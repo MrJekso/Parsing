@@ -22,3 +22,4 @@ class DB(metaclass=SingletonDB):
 				else:
 					str_res+=f"{res['Database']}\n"
 			print(str_res)
+		self.connection.close()
