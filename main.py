@@ -1,4 +1,5 @@
 import math
+from db import DB
 
 class Parsing:
 	def __init__(self):
@@ -12,8 +13,8 @@ class Parsing:
 	def parsing_page(self):
 		pass
 	def download_data_db(self,data):
-		for i in data:
-			print(f"KURS: {i}")
+		data_base = DB('localhost','test','123','test')
+		data_base.show_database()
 class Bot:
 	pass
 
@@ -21,6 +22,6 @@ class Main:
 	def start(self):
 		#OSNOVA LOGICA
 		obj = Parsing()
-		obj.download_datat_db(["USD 231","EVRO 433","RUB 42"])
+		obj.download_data_db([123,123])
 Main().start()
 
