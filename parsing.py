@@ -15,7 +15,6 @@ print('-------------------------------------------------------------')
 for tab in table:
     res = tab.text.split()
     print(res, '\n')
-    break
 
 '''    with open("parsing.txt", "a") as file:
         file.write(str(res))
