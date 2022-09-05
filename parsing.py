@@ -11,8 +11,9 @@ table = soup.find_all('tr', limit=11)
 for quote in quotes:
     print(quote.text)
 print('-------------------------------------------------------------')
+
 for tab in table:
-    res = tab.text.split()
+    res = tab.text.split(',')
     print(res, '\n')
 
 
