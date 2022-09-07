@@ -14,7 +14,9 @@ class Parsing:
 		pass
 	def download_data_db(self,data):
 		data_base = DB('localhost','test','123','test')
-		data_base.show_database()
+		#data_base.show_database()
+		data_base.update_db([123,123])
+		#data_base.create_db()
 class Bot:
 	pass
 
