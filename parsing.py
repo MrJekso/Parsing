@@ -8,19 +8,22 @@ def parsing():
     soup = BeautifulSoup(response.text, 'lxml')
     quotes = soup.find_all('h2', class_='subTitle')
     resthead = soup.find_all('thead')
-    table = soup.find_all('tr', limit=11)
+    table = soup.find_all('td',limit=80)
 
     index = 0
     data = []
+    tr = []
     for tab in table:
         if index > 0:
-            arr = tab.text.split('</td>')
-            arr=arr[3:]
-            data.append(arr)
-            print(arr)
+            arr = tab.text
+            if arr != '':
+                tr.append(arr)
+            else:
+                data.append(tr)
+                tr = []
         else:
             index+=1
-    
+    print(data)
     return data
 parsing()
 '''with open("parsing.txt", "a") as file:
