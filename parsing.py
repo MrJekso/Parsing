@@ -8,12 +8,12 @@ def parsing():
     soup = BeautifulSoup(response.text, 'lxml')
     quotes = soup.find_all('h2', class_='subTitle')
     resthead = soup.find_all('thead')
-    table = soup.find_all('tr', limit=90)
+    table = soup.find_all('tr', limit=11)
 
     index = 0
     for tab in table:
         if index > 0:
-            arr = tab.text.split('<td>')
+            arr = tab.text.split('</td>')
             print(arr)
         else:
             index+=1
