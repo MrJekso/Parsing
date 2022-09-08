@@ -11,15 +11,17 @@ def parsing():
     table = soup.find_all('tr', limit=11)
 
     index = 0
+    data = []
     for tab in table:
         if index > 0:
             arr = tab.text.split('</td>')
-            #arr=arr[3:]
+            arr=arr[3:]
+            data.append(arr)
             print(arr)
         else:
             index+=1
     
-    return arr
+    return data
 parsing()
 '''with open("parsing.txt", "a") as file:
     file.w'rite(str(res))'''
