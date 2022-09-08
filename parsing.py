@@ -14,6 +14,7 @@ def parsing():
     for tab in table:
         if index > 0:
             arr = tab.text.split('</td>')
+            #arr[3:]
             print(arr)
         else:
             index+=1
